@@ -1,1 +1,1 @@
-apt-get update && apt-get install -y 
+apt-get update && apt-get install -y python3-pip
