@@ -7,17 +7,13 @@ def NegativeToPositive(x):
     '''check if an element is negative and makes it positive'''
     return x * -1 if x < 0 else x
 
-
 def TakeEven(inputDict):
     '''takes the even numbers of a dict'''
-    return {key: [idx for idx in val if not idx % 2]  
-          for key, val in inputDict.items()}  
-
+    return {key: val for key, val in inputDict.items() if not val % 2}
 
 def TakeOdd(inputDict):
     '''takes the odd numbers of a dict'''
-    return {key: (lambda val: val % 2) for key, val in inputDict.items()}
-
+    return {key: val for key, val in inputDict.items() if val % 2}
 
 def CreateRandomDict(dictLenght):
     '''create a dict with random values'''
@@ -25,7 +21,6 @@ def CreateRandomDict(dictLenght):
     for i in range(dictLenght):
         myDict.update({f"key{i}": random.randint(-100, 100)})
     return myDict
-
 
 helloWorld = "Hello World!"
 print(helloWorld)
@@ -39,9 +34,8 @@ oddDict = TakeOdd(aDict)
 path = "Files/data.json"
 pathEven = "Files/dataEven.json"
 pathOdd = "Files/dataOdd.json"
-jsonString = json.dumps(aDict)
 with open(path, "w+") as jsonFile:
-    jsonFile.write(jsonString)
+    jsonFile.write(json.dumps(aDict, indent=4))
 with open(pathEven, "w+") as jsonFile:
     print(f"even values in dict:\n{evenDict}")
     jsonFile.write(json.dumps(evenDict, indent=4))
