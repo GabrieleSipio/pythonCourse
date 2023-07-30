@@ -11,4 +11,6 @@ while (strucType.lower() != "quit"):
     print(newData)
     if(strucType.lower() == "list"):
         print(f"reversed list:\n{newData[::-1]}")
+        newData.sort()
+        print(f"sorted list:\n{newData}")
     strucType = input("want to generate another structure or quit?\n")
