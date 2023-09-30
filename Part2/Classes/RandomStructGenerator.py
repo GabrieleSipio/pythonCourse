@@ -9,8 +9,7 @@ class RandomStructGenerator:
     def CreateRandomList(self):
         '''create a list with random in values'''
         myList = []
-        for i in range(self.lenght):
-            myList.append(random.randint(-100, 100))
+        myList.extend([random.randint(-100, 100) for i in range(self.lenght)])
         return myList
 
     def CreateRandomDict(self):
