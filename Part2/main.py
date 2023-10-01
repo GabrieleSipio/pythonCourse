@@ -25,7 +25,6 @@ def playWithList(inputList):
     print(f'even list {evenList}')
     print(f'uneven list {unevenList}')
     oppositeList.sort()
-    
     evenList.sort()
     unevenList.sort()
     print(f'opposite sorted list {oppositeList}')
