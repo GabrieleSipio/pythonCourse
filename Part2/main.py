@@ -33,6 +33,7 @@ def playWithList(inputList):
     print(f'zipped list {list(zip(evenList, unevenList))}')
 
 def MostOccurredCharacter(inputString):
+    # basic resolution
     # charDict = {}
     # for letter in inputString:
     #     if (letter not in charDict):
