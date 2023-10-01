@@ -4,33 +4,7 @@ import random
 from collections import Counter
 
 
-def playWithList(inputList):
-    print(f"reversed list:\n{inputList[::-1]}")
-    inputList.sort()
-    print(f"sorted list:\n{inputList}")
-    first, second, *other = inputList
-    print(f'Unpacked list {first}, {second}, {other}')
-    print(f'old list {inputList}')
-    print(f'list before pop {other}')
-    print(f'removed item {other.pop(random.randint(0,len(other)-1))}')
-    print(f'list after pop {other}')
-    # oppositeList = list(map(lambda x: x * -1, newData))
-    oppositeList = [x * -1 for x in inputList]
-    # evenList = list(filter(lambda x: x % 2 == 0, newData))
-    evenList = [x for x in inputList if x % 2 == 0]
-    # unevenList = list(filter(lambda x: not x % 2 == 0, newData))
-    unevenList = [x for x in inputList if not x % 2 == 0]
-    print(f'original list {inputList}')
-    print(f'opposite list {oppositeList}')
-    print(f'even list {evenList}')
-    print(f'uneven list {unevenList}')
-    oppositeList.sort()
-    evenList.sort()
-    unevenList.sort()
-    print(f'opposite sorted list {oppositeList}')
-    print(f'even sorted list {evenList}')
-    print(f'uneven sorted list {unevenList}')
-    print(f'zipped list {list(zip(evenList, unevenList))}')
+
 
 def MostOccurredCharacter(inputString):
     # basic resolution
@@ -56,6 +30,6 @@ while (strucType.lower() != "quit"):
     newData = randomStruct.CreateRandomStruct()
     print(newData)
     if (strucType.lower() == "list"):
-        playWithList(newData)
+        randomStruct.PlayWithList(newData)
 
     strucType = input("want to generate another structure or quit?\n")
