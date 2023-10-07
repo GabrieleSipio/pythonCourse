@@ -23,7 +23,7 @@ class RandomStructGenerator:
         '''Create a random data structure'''
         return self.CreateRandomList() if self.strucType.lower() == "list" else self.CreateRandomDict()
     
-    def playWithList(self,inputList):
+    def PlayWithList(self,inputList):
         print(f"reversed list:\n{inputList[::-1]}")
         inputList.sort()
         print(f"sorted list:\n{inputList}")

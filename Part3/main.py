@@ -1,7 +1,7 @@
 '''working with data structures and classes but with exception handling'''
 import sys
 sys.path.append('/home/jager/Documenti/GitHub/pythonCourse')
-from Part2.Classes.RandomStructGenerator import RandomStructGenerator
+from Classes.RandomStructGenerator import RandomStructGenerator
 def payWithDataStructures():
     action = ''
     while action!= 'q':
@@ -14,7 +14,7 @@ def payWithDataStructures():
                 strLenght = input('Enter the length of the list: ')
                 listGenerator = RandomStructGenerator("list",int(strLenght))
                 randList = listGenerator.CreateRandomList()
-                listGenerator.playWithList(randList)
+                listGenerator.PlayWithList(randList)
             elif action =='d':
                 print(f'Saving {action}')
             elif action =='ex':

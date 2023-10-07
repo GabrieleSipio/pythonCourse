@@ -1,8 +1,9 @@
 '''Part 2 Lis and Dictionary specific'''
-from Classes.RandomStructGenerator import RandomStructGenerator
 import random
 from collections import Counter
-
+import sys
+sys.path.append('/home/jager/Documenti/GitHub/pythonCourse')
+from Classes.RandomStructGenerator import RandomStructGenerator
 
 
 
