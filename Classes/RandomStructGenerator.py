@@ -84,7 +84,6 @@ class RandomStructGenerator:
         print(f'uneven sorted list {unevenList}')
         print(f'zipped list {list(zip(evenList, unevenList))}')
 
-
     def PlayWithDictionary(self, inputDict):
         print(f'play with dict {inputDict}')
         evenDict = self.__takeEven(inputDict)

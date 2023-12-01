@@ -1,8 +1,10 @@
 '''working with data structures and classes but with exception handling'''
-from Classes.RandomStructGenerator import RandomStructGenerator
-import os
 import sys
 sys.path.append('/home/jager/Documenti/GitHub/pythonCourse')
+from Classes.RandomStructGenerator import RandomStructGenerator
+from Classes.FileManagement import FileManagement
+import os
+
 
 
 def payWithDataStructures():
@@ -27,9 +29,14 @@ def payWithDataStructures():
                         "dict", int(dictLenght))
                     randDict = dictGenerator.CreateRandomStruct()
                     dictGenerator.PlayWithDictionary(randDict)
+                    if (input("Want to write to files? ") == 'yes'):
+                        path = "Files/FileManagement"
+                        fileManager = FileManagement(path)
+                        fileManager.WriteDictIntoFile(randDict)
+                        fileManager.CreateZip(path)
                 case 'ex':
                     print(f'Saving {action}')
-                    test = os.path.isdir("Files")
+                    test = os.listdir(path="Files/FileManagement")
                     print(f'{test}')
                 case 'q':
                     break
