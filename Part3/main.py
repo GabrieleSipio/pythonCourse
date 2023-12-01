@@ -33,7 +33,7 @@ def payWithDataStructures():
                         path = "Files/FileManagement"
                         fileManager = FileManagement(path)
                         fileManager.WriteDictIntoFile(randDict)
-                        fileManager.CreateZip(path)
+                        fileManager.CreateZip()
                 case 'ex':
                     print(f'Saving {action}')
                     test = os.listdir(path="Files/FileManagement")
