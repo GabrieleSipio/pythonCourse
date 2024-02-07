@@ -1,1 +1,9 @@
 apt-get update && apt-get install -y python3-pip
+
+pipenv install
+
+pipenv --venv
+
+pipenv shell
+
+On vs code select the correct interpreter and if code runner use the python of the venv
