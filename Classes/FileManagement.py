@@ -22,30 +22,33 @@ class FileManagement:
             raise ValueError("Path is not valid")
         self.__path = value
 
-    def __writeJson(self, inputValue):
-        with open(self.path + "/DictToJson.json", "w+", encoding="utf-8") as jsonFile:
+    def __writeJson(self, inputValue, name):
+        with open(self.path + f"/{name}DictToJson.json", "w+", encoding="utf-8") as jsonFile:
             jsonFile.write(json.dumps(inputValue, indent=4))
 
-    def __writeCsv(self, inputValue):
-        with open(self.path + "/DictToCsv.csv", 'w', encoding="utf-8") as csvfile:
+    def __writeCsv(self, inputValue, name):
+        with open(self.path + f"/{name}DictToCsv.csv", 'w', encoding="utf-8") as csvfile:
             w = csv.DictWriter(csvfile, inputValue.keys())
             w.writeheader()
             w.writerow(inputValue)
 
-    def __writeXlsx(self, inputValue):
+    def __writeXlsx(self, inputValue, name):
         df = pd.DataFrame(data=inputValue, index=[0])
         df = (df.T)
         print(df)
-        df.to_excel(self.path + "/dictToXlsx.xlsx")
+        df.to_excel(self.path + f"/{name}dictToXlsx.xlsx")
 
-    def WriteDictIntoFile(self, inputValue):
+    def WriteDictIntoFile(self, inputValue, name):
         print("Writing dict to json")
-        self.__writeJson(inputValue)
+        self.__writeJson(inputValue, name)
         print("Writing dict to Csv")
-        self.__writeCsv(inputValue)
+        self.__writeCsv(inputValue, name)
         print("Writing dict to Xlsx")
-        self.__writeXlsx(inputValue)
+        self.__writeXlsx(inputValue, name)
 
+    def WriteDictToJsonFile(self, inputValue, name):
+        print("Writing dict to json")
+        self.__writeJson(inputValue, name)
     def CreateZip(self):
         file_names = os.listdir(path="Files/FileManagement")
         print("File Paths:")
