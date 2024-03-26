@@ -7,3 +7,6 @@ pipenv --venv
 pipenv shell
 
 On vs code select the correct interpreter and if code runner use the python of the venv
+
+winget upgrade per vedere cosa può essere aggiornato
+winget upgrade --all per fare l'upgrade di tutto 

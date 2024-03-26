@@ -4,11 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-pandas = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
-pylint = "*"
 
 [requires]
 python_version = "3.12"
